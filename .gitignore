@@ -1,0 +1,25 @@
+# Kubernetes
+*.kubeconfig
+*.key
+*.crt
+*.pem
+
+# Logs
+logs
+*.log
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Editor directories and files
+.idea
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
