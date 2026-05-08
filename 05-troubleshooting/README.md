@@ -1,26 +1,28 @@
 # Troubleshooting (30%)
 
-This is the largest domain in the CKA exam, making up 30%. It covers diagnosing and fixing issues at the application, node, and cluster levels.
+This is the largest domain in the CKA exam, making up 30%. It covers diagnosing and fixing issues at the cluster, node, application, and networking levels.
 
-## Extensive Topic List
+## Topics (2026 Syllabus)
 
-- **Evaluate Cluster and Node Logging**
-  - Locating and inspecting control plane logs (e.g., kube-apiserver, etcd).
-  - Finding kubelet logs on worker nodes (e.g., `journalctl -u kubelet`).
-- **Understand How to Monitor Applications**
+- **Troubleshoot Clusters and Nodes**
+  - Diagnosing NotReady nodes and checking node conditions.
+  - Inspecting kubelet logs on worker nodes (e.g., `journalctl -u kubelet`).
+  - Verifying node resources and system Pod health.
+  - Draining, cordoning, and uncordoning nodes.
+- **Troubleshoot Cluster Components**
+  - Locating and inspecting control plane component logs (kube-apiserver, kube-scheduler, kube-controller-manager, etcd).
+  - Identifying issues with static Pod manifests in `/etc/kubernetes/manifests/`.
+  - Diagnosing certificate and authentication problems.
+- **Monitor Cluster and Application Resource Usage**
   - Using the Metrics Server to gather CPU and memory utilization.
   - Using `kubectl top nodes` and `kubectl top pods`.
-- **Manage Container Standard Output & Standard Error Logs**
+  - Identifying resource bottlenecks and scheduling failures.
+- **Manage and Evaluate Container Output Streams**
   - Viewing Pod and container logs using `kubectl logs`.
   - Troubleshooting crash loops and init container failures.
-- **Troubleshoot Application Failure**
-  - Using `kubectl describe pod` to identify scheduling or image pull errors.
-  - Executing into containers using `kubectl exec` to debug from within.
-- **Troubleshoot Cluster Component Failure**
-  - Diagnosing NotReady nodes and checking node conditions.
-  - Identifying issues with the scheduler or controller-manager.
-  - Uncordoning or draining nodes appropriately.
-- **Troubleshoot Networking**
+  - Streaming logs from multi-container Pods (`-c` flag).
+- **Troubleshoot Services and Networking**
   - Diagnosing Service and Endpoint mapping issues.
   - Troubleshooting DNS resolution failures (CoreDNS).
-  - Validating CNI installation and Network Policies blocking traffic.
+  - Validating NetworkPolicy rules blocking legitimate traffic.
+  - Using `kubectl exec` to test connectivity from within Pods.

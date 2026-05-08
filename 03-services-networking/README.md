@@ -1,26 +1,29 @@
 # Services & Networking (20%)
 
-This section covers Kubernetes networking concepts, Services, and Ingress routing, making up 20% of the CKA exam.
+This section covers Kubernetes networking concepts, Services, and traffic routing, making up 20% of the CKA exam.
 
-## Extensive Topic List
+## Topics (2026 Syllabus)
 
-- **Understand Host Networking Configuration on the Cluster Nodes**
-  - Basic Linux networking and routing.
-  - Examining node network interfaces and iptables.
 - **Understand Connectivity Between Pods**
   - The Kubernetes networking model (every Pod gets a unique IP).
   - Pod-to-Pod communication across different nodes.
-- **Understand ClusterIP, NodePort, LoadBalancer Service Types and Endpoints**
+- **Define and Enforce Network Policies**
+  - Creating Ingress and Egress NetworkPolicy rules.
+  - Implementing default deny-all policies.
+  - Allowing traffic from specific Pods, Namespaces, or IP blocks.
+- **Use ClusterIP, NodePort, LoadBalancer Service Types and Endpoints**
   - Creating and exposing Services.
-  - Understanding how Endpoints map Services to Pods.
+  - Understanding how Endpoints and EndpointSlices map Services to Pods.
   - Differences between `ClusterIP`, `NodePort`, `LoadBalancer`, and `ExternalName`.
+- **Use the Gateway API to Manage Ingress Traffic**
+  - Understanding the Gateway API as the successor to Ingress.
+  - Creating GatewayClass, Gateway, and HTTPRoute resources.
+  - Configuring path-based and host-based routing with Gateway API.
 - **Know How to Use Ingress Controllers and Ingress Resources**
   - Installing and configuring an Ingress Controller (e.g., NGINX Ingress).
   - Creating Ingress resources to route HTTP/HTTPS traffic.
   - Configuring path-based and host-based routing.
-- **Know How to Configure and Use CoreDNS**
+- **Understand and Use CoreDNS**
   - Understanding internal DNS resolution for Services and Pods.
   - Troubleshooting CoreDNS configuration and logs.
-- **Choose an Appropriate Container Network Interface (CNI) Plugin**
-  - Installing and configuring a CNI plugin (e.g., Calico, Flannel, WeaveNet, Cilium).
-  - Implementing Network Policies to restrict traffic between Pods.
+  - Customizing CoreDNS with Corefile entries.

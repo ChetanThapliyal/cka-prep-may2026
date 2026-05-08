@@ -2,18 +2,19 @@
 
 This section focuses on managing persistent data in Kubernetes, making up 10% of the CKA exam.
 
-## Extensive Topic List
+## Topics (2026 Syllabus)
 
-- **Understand Storage Classes and Persistent Volumes (PV)**
-  - Creating Persistent Volumes.
-  - Understanding the role of StorageClasses in dynamic provisioning.
-- **Understand Volume Mode, Access Modes, and Reclaim Policies for Volumes**
+- **Implement Storage Classes and Dynamic Volume Provisioning**
+  - Creating and configuring StorageClass resources.
+  - Understanding how dynamic provisioning eliminates manual PV creation.
+  - Setting a default StorageClass.
+- **Configure Volume Types, Access Modes and Reclaim Policies**
+  - **Volume Types:** emptyDir, hostPath, NFS, CSI-backed volumes.
   - **Volume Modes:** `Filesystem` vs. `Block`.
   - **Access Modes:** `ReadWriteOnce` (RWO), `ReadOnlyMany` (ROX), `ReadWriteMany` (RWX), `ReadWriteOncePod` (RWOP).
-  - **Reclaim Policies:** `Retain`, `Delete`, `Recycle`.
-- **Understand Persistent Volume Claims (PVC) Primitive**
-  - Creating Persistent Volume Claims.
-  - Binding PVCs to PVs based on capacity and access modes.
-- **Know How to Configure Applications with Persistent Storage**
+  - **Reclaim Policies:** `Retain`, `Delete`.
+- **Manage Persistent Volumes and Persistent Volume Claims**
+  - Creating Persistent Volumes (PV) and Persistent Volume Claims (PVC).
+  - Binding PVCs to PVs based on capacity, access modes, and StorageClass.
+  - Expanding PVCs (when the StorageClass allows volume expansion).
   - Mounting PVCs into Pods as volumes.
-  - Using emptyDir and hostPath volumes.
