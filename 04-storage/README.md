@@ -2,8 +2,6 @@
 
 This section focuses on managing persistent data in Kubernetes, making up 10% of the CKA exam.
 
-## Topics (2026 Syllabus)
-
 - **Implement Storage Classes and Dynamic Volume Provisioning**
   - Creating and configuring StorageClass resources.
   - Understanding how dynamic provisioning eliminates manual PV creation.

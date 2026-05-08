@@ -2,8 +2,6 @@
 
 This section covers Kubernetes networking concepts, Services, and traffic routing, making up 20% of the CKA exam.
 
-## Topics (2026 Syllabus)
-
 - **Understand Connectivity Between Pods**
   - The Kubernetes networking model (every Pod gets a unique IP).
   - Pod-to-Pod communication across different nodes.

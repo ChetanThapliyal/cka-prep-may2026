@@ -2,8 +2,6 @@
 
 This section covers the management, installation, and configuration of a Kubernetes cluster, making up 25% of the CKA exam.
 
-## Topics (2026 Syllabus)
-
 - **Manage Role-Based Access Control (RBAC)**
   - Creating Roles and ClusterRoles.
   - Creating RoleBindings and ClusterRoleBindings.

@@ -2,8 +2,6 @@
 
 This section covers the creation, management, and scheduling of workloads in Kubernetes, making up 15% of the CKA exam.
 
-## Topics (2026 Syllabus)
-
 - **Understand Application Deployments and How to Perform Rolling Updates and Rollbacks**
   - Creating and managing Deployments.
   - Updating Deployments and checking rollout status.

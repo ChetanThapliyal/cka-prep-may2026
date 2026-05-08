@@ -2,8 +2,6 @@
 
 This is the largest domain in the CKA exam, making up 30%. It covers diagnosing and fixing issues at the cluster, node, application, and networking levels.
 
-## Topics (2026 Syllabus)
-
 - **Troubleshoot Clusters and Nodes**
   - Diagnosing NotReady nodes and checking node conditions.
   - Inspecting kubelet logs on worker nodes (e.g., `journalctl -u kubelet`).
