@@ -14,7 +14,7 @@ This repository contains study notes, practice manifests, and scripts for the Ce
 
 ## Exam Objectives
 
-The CKA exam domains and their weights are:
+> As of June 2026
 
 - Cluster Architecture, Installation & Configuration: **25%**
 - Workloads & Scheduling: **15%**
@@ -51,7 +51,7 @@ One active browser tab is permitted, strictly limited to the following domains:
 - **OS:** Windows 10/11 (64-bit), macOS 13.x+, or Ubuntu 22.04.
 - **Software:** PSI Secure Browser (downloads at exam start) to access the PSI Bridge remote desktop. You must use the provided Firefox browser inside the remote desktop.
 - **Hardware:**
-  - **Screen:** 1920x1080 minimum (32-bit color). *Dual monitors are not supported.*
+  - **Screen:** 1920x1080 minimum (32-bit color). _Dual monitors are not supported._
   - **Webcam:** 640x480 minimum. Must provide a 360˚ room view (external camera required for desktops). You must remain centered in the frame.
   - **Mic/Network:** Functional microphone and at least 300 kbps up/down internet bandwidth.
 - **Room Setup:** Must be private, quiet, and well-lit (no public spaces). Desk must be completely clear of papers and electronics.
