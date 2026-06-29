@@ -1,0 +1,44 @@
+
+# ============================================================
+# CKA Lab — Worker Node Join (Auto Mode)
+# Waits for API server, then runs kubeadm join
+# ============================================================
+
+echo ""
+echo "==========================================="
+echo " CKA Lab — Auto: Joining Cluster"
+echo " Node: ${node_name}"
+echo "==========================================="
+echo ""
+
+# ── 1. Wait for API server ──────────────────────────────────
+echo "[1/2] Waiting for control plane API at ${controlplane_ip}:6443..."
+for i in $(seq 1 60); do
+  if curl -sk https://${controlplane_ip}:6443/healthz 2>/dev/null | grep -q "ok"; then
+    echo "  API server is reachable."
+    break
+  fi
+  if [ "$i" -eq 60 ]; then
+    echo "  ERROR: API server not reachable after 10 minutes. Aborting."
+    exit 1
+  fi
+  echo "  Waiting... ($i/60)"
+  sleep 10
+done
+
+# Give API server a few extra seconds to stabilize
+sleep 15
+
+# ── 2. kubeadm join ─────────────────────────────────────────
+echo "[2/2] Running kubeadm join..."
+kubeadm join "${controlplane_ip}:6443" \
+  --token="${bootstrap_token}" \
+  --discovery-token-unsafe-skip-ca-verification \
+  --node-name="${node_name}"
+
+echo "  kubeadm join complete."
+
+echo ""
+echo "==========================================="
+echo " ${node_name} has joined the cluster!"
+echo "==========================================="

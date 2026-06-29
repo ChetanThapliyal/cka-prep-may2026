@@ -9,6 +9,7 @@ This repository contains study notes, practice manifests, and scripts for the Ce
 - `03-services-networking/`: Services & Networking
 - `04-storage/`: Storage
 - `05-troubleshooting/`: Troubleshooting
+- `lab/`: Terraform-based GCP practice lab (3-node kubeadm cluster)
 - `scripts/`: Helper scripts for setting up practice environments
 - `manifests/`: General practice YAML manifests
 
@@ -27,7 +28,7 @@ This repository contains study notes, practice manifests, and scripts for the Ce
 ### The Arena
 
 - **Format:** 100% hands-on exam via PSI Bridge remote desktop.
-- **Environment:** Operating inside an Ubuntu XFCE Linux terminal.
+- **Environment:** Ubuntu remote desktop with XFCE desktop environment, accessed via PSI Bridge.
 - **Questions:** No multiple-choice questions.
 
 ### The Mission
@@ -65,4 +66,4 @@ The Administrator's role is to ensure reliability, performance, and availability
 - [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 - [CKA Exam Details](https://training.linuxfoundation.org/certification/certified-kubernetes-administrator-cka/)
 - [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/)
-- **[Exam Day Tips](EXAM_TIPS.md)** - Mechanical and terminal tips for navigating the PSI Bridge.
+- **[Exam Day Tips](CKA-tips.md)** — Study strategy, terminal handling, Vim essentials, and PSI Bridge navigation.

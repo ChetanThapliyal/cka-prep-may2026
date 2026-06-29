@@ -1,0 +1,49 @@
+
+# ============================================================
+# CKA Lab — Control Plane Bootstrap (Auto Mode)
+# Runs kubeadm init, installs Calico CNI and Helm
+# ============================================================
+
+echo ""
+echo "==========================================="
+echo " CKA Lab — Auto: Bootstrapping Cluster"
+echo "==========================================="
+echo ""
+
+# ── 1. kubeadm init ─────────────────────────────────────────
+echo "[1/4] Running kubeadm init..."
+K8S_FULL_VERSION=$(kubeadm version -o short)
+kubeadm init \
+  --apiserver-advertise-address="${controlplane_ip}" \
+  --pod-network-cidr="${pod_cidr}" \
+  --token="${bootstrap_token}" \
+  --kubernetes-version="$K8S_FULL_VERSION" \
+  --node-name=controlplane
+echo "  kubeadm init complete."
+
+# ── 2. Configure kubectl ────────────────────────────────────
+echo "[2/4] Configuring kubectl..."
+mkdir -p /home/ubuntu/.kube
+cp /etc/kubernetes/admin.conf /home/ubuntu/.kube/config
+chown -R ubuntu:ubuntu /home/ubuntu/.kube
+
+mkdir -p /root/.kube
+cp /etc/kubernetes/admin.conf /root/.kube/config
+echo "  kubectl configured for ubuntu and root."
+
+# ── 3. Install Calico CNI ───────────────────────────────────
+echo "[3/4] Installing Calico CNI..."
+export KUBECONFIG=/etc/kubernetes/admin.conf
+kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.28.2/manifests/calico.yaml
+echo "  Calico applied. Pods may take 1-2 min to become Ready."
+
+# ── 4. Install Helm ─────────────────────────────────────────
+echo "[4/4] Installing Helm..."
+curl -fsSL https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+echo "  Helm installed."
+
+echo ""
+echo "==========================================="
+echo " Cluster bootstrap complete!"
+echo " Workers will auto-join shortly."
+echo "==========================================="

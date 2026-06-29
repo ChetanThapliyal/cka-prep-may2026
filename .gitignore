@@ -1,25 +1,72 @@
+# =============================================
+# Terraform
+# =============================================
+*.tfstate
+*.tfstate.*
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+terraform.tfvars
+*.auto.tfvars
+
+# =============================================
+# GCP / Credentials
+# =============================================
+*-key.json
+*-credentials.json
+service-account*.json
+cka-terraform-key.json
+
+# =============================================
 # Kubernetes
+# =============================================
 *.kubeconfig
 *.key
 *.crt
 *.pem
 
+# =============================================
+# SSH Keys
+# =============================================
+id_rsa
+id_ed25519
+*.pub
+cka-lab-key
+
+# =============================================
+# Environment
+# =============================================
+.env
+.env.*
+
+# =============================================
 # Logs
-logs
+# =============================================
+logs/
 *.log
 
-# OS metadata
+# =============================================
+# OS / Editor
+# =============================================
 .DS_Store
 Thumbs.db
-
-# Environment variables
-.env
-
-# Editor directories and files
-.idea
+*.sw?
+*.swo
+*~
 .vscode/
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+
+# =============================================
+# SSH Sessions
+# =============================================
+lab/ssh-sessions
