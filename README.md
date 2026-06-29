@@ -27,12 +27,12 @@ terraform init && terraform apply -var="auto_cluster=true"
 
 ## Prerequisites
 
-| Tool | Purpose | Install |
-|---|---|---|
-| `gcloud` CLI | GCP project setup & auth | [cloud.google.com/sdk](https://cloud.google.com/sdk/docs/install) |
+| Tool               | Purpose                      | Install                                                                                |
+| ------------------ | ---------------------------- | -------------------------------------------------------------------------------------- |
+| `gcloud` CLI       | GCP project setup & auth     | [cloud.google.com/sdk](https://cloud.google.com/sdk/docs/install)                      |
 | `terraform` >= 1.5 | Provision lab infrastructure | [developer.hashicorp.com/terraform](https://developer.hashicorp.com/terraform/install) |
-| `git` | Clone this repo | Pre-installed on most systems |
-| GCP account | Run the VMs | ~$20 in credits covers ~50 sessions |
+| `git`              | Clone this repo              | Pre-installed on most systems                                                          |
+| GCP account        | Run the VMs                  | ~$20 in credits covers ~50 sessions                                                    |
 
 ---
 
@@ -66,18 +66,19 @@ cka-prep/
 
 The `lab/` directory contains a fully automated, ephemeral Kubernetes practice environment on GCP using Terraform.
 
-| Mode | Command | Use case |
-|---|---|---|
-| **Manual** | `terraform apply` | Practice `kubeadm init` and node joining |
-| **Auto** | `terraform apply -var="auto_cluster=true"` | Jump straight into scenario practice on a ready cluster |
+| Mode       | Command                                    | Use case                                                |
+| ---------- | ------------------------------------------ | ------------------------------------------------------- |
+| **Manual** | `terraform apply`                          | Practice `kubeadm init` and node joining                |
+| **Auto**   | `terraform apply -var="auto_cluster=true"` | Jump straight into scenario practice on a ready cluster |
 
 **Default config:** 1 control plane (`e2-standard-2`) + 2 workers (`e2-medium`), Kubernetes v1.34, Calico CNI, Helm.  
 **Cost:** ~$0.40/session (2-3 hrs). Always run `terraform destroy` after.
 
 📖 **Lab Documentation:**
+
 - [Getting Started](lab/docs/getting-started.md) — Full setup walkthrough
 - [Lab Overview](lab/docs/lab-overview.md) — Architecture diagram and how the Terraform code works
-- [ADR-001](lab/docs/ADR-001-lab-architecture.md) — Why we built it this way
+- [ADR-001](lab/docs/ADR-001-lab-architecture.md) — Why I built it this way
 
 ---
 
@@ -85,13 +86,13 @@ The `lab/` directory contains a fully automated, ephemeral Kubernetes practice e
 
 > As of June 2026
 
-| Domain | Weight |
-|---|---|
+| Domain                                             | Weight  |
+| -------------------------------------------------- | ------- |
 | Cluster Architecture, Installation & Configuration | **25%** |
-| Workloads & Scheduling | **15%** |
-| Services & Networking | **20%** |
-| Storage | **10%** |
-| Troubleshooting | **30%** |
+| Workloads & Scheduling                             | **15%** |
+| Services & Networking                              | **20%** |
+| Storage                                            | **10%** |
+| Troubleshooting                                    | **30%** |
 
 ---
 
