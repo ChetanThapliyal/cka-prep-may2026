@@ -4,8 +4,6 @@
 
 - **Infrastructure Provisioning:** Kubernetes nodes require servers, networks, and storage. Tools like Ansible or Terraform automate this process, though infrastructure provisioning itself falls outside the core scope of Kubernetes administration.
 
-![Kubernetes CRI CSI and CNI Interfaces](src/kubernetes-cri.png)
-
 - **Container Network Interface (CNI):** Responsible for establishing network connections between Pods. Popular plug-ins include Calico, flannel, Cilium, and cloud-specific options like AWS VPC CNI.
 - **Container Runtime Interface (CRI):** Manages the lifecycle of containers and handles resource requests. Options include containerd (the default/most popular), CRI-O, and Docker Engine via cri-dockerd.
 - **Container Storage Interface (CSI):** A standard for integrating third-party block and file storage systems (e.g., AWS EBS CSI, Rook/Ceph, Portworx) with containerized workloads.
